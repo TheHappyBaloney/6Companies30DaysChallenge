@@ -1,3 +1,11 @@
+// 2513. Maximize the minimum of two arrays
+
+#include <algorithm>
+#include <climits>
+#include <numeric>
+
+using namespace std;
+
 #define ll long long 
 class Solution {
 public:
@@ -5,7 +13,7 @@ public:
     {
         ll divby01 = mid / d1 , divby02 = mid / d2;
         ll notdivby01 = mid - divby01 , notdivby02 = mid - divby02;
-        ll notdivboth = mid - mid/lcm(d1,d2);
+        ll notdivboth = mid - mid/__gcd(d1,d2);
 
         if (notdivby01 >= c1 && notdivby02 >= c2 && notdivboth >= c1 + c2)
         {
